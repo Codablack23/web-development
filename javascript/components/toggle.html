@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            background-color: #BDBDBD;
+        }
+        main{
+            display: grid;
+            gap:2px;
+            max-width: 1024px;
+            margin: auto;
+            padding: 36px;
+            grid-template-columns: repeat(3,1fr);
+        }
+        .card{
+            background-color: #fff;
+            color: grey;
+            padding: 8px;
+            min-height: 150px;
+            text-align: center;
+            transition: all ease 0.4s;
+        }
+        .card.active{
+            background-color: #333333;
+            transform: scale(1.1);
+            color: #ffffff;
+        }
+        .card .price{
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .toggle-btn{
+            border: none;
+            height: 40px;
+            margin:10px auto;
+            width: 100px;
+            display: flex;
+            justify-content: flex-start;
+            transition: all ease 0.5s;
+            cursor: pointer;
+            border-radius: 100px;
+            padding: 4px;
+            background-color: #F44336;
+        }
+        .toggle-btn span{
+            height: 30px;
+            width: 30px;
+            background-color: #ffff;
+            display: inline-block;
+            border-radius: 100%;
+            transform: translateX(0%);
+            transition: all ease 0.4s;
+        }
+       span.yearly{
+            transform: translateX(200%);
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn">
+        <span class="toggle-circle"></span>
+    </button>
+    <main>
+        <div class="card">
+            <p class="price"></p>
+        </div>
+        <div class="card">
+            <p class="price"></p>
+        </div>
+        <div class="card">
+            <p class="price"></p>
+        </div>
+    </main>
+</body>
+<script>
+    let isAnnual = false
+    let activePrice = 0
+    const prices = [11,12.39,15.45]
+
+    const priceCards = document.querySelectorAll(".card")
+    const toggleBtn = document.querySelector(".toggle-btn")
+    const toggleCicle = document.querySelector(".toggle-circle")
+    const priceElements = document.querySelectorAll(".price")
+
+    const handlePrice = (annual)=>{
+        if(annual){
+                toggleCicle.classList.add("yearly")
+            }else{
+                toggleCicle.classList.remove("yearly")
+        }
+        prices.forEach((price,index)=>{
+            if(annual){
+                priceElements[index].innerHTML = `$${(price * 12).toFixed(2)}`
+                return;
+            }
+            priceElements[index].innerHTML = `$${price}`
+        })
+    }
+
+    toggleBtn.addEventListener('click',()=>{
+        isAnnual = !isAnnual
+        handlePrice(isAnnual)
+    })
+
+    const handleSelect = (active)=>{
+        priceCards.forEach((card,index)=>{
+            if(active === index){
+                card.classList.add("active")
+            }
+            else{
+                card.classList.remove("active")
+            }
+        })
+    }
+
+    priceCards.forEach((card,i)=>{
+        card.addEventListener('click',()=>{
+            handleSelect(i)
+        })
+    })
+
+    const init=()=>{
+        handlePrice(isAnnual)
+        handleSelect(activePrice)
+    }
+
+    window.addEventListener("load",()=>{
+        init()
+    })
+
+
+</script>
+</html>

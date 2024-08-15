@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*,body{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+body,html{
+    background-color: hsl(0, 0%, 86%);
+}
+main{
+    max-width: 500px;
+    min-height: 400px;
+    padding: 32px;
+    background-color: hsl(0, 0%, 100%);
+    margin-top: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:16px 16px 160px 16px;
+}
+.date-form{
+    width: 85%;
+    display: flex;
+    gap: 32px;
+}
+
+.date-field{
+    flex: 1;
+}
+.date-field label{
+    text-transform: uppercase;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: hsl(0, 1%, 44%);
+}
+.date-field label.error{
+    color:hsl(0, 100%, 67%);
+}
+.date-field p.error{
+    color: hsl(0, 100%, 67%);
+    font-size: 12px;
+}
+
+.date-field input{
+    padding:8px;
+    border-radius: 8px;
+    border: 1px solid hsl(0, 0%, 86%);
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+}
+.date-field input.error{
+    border: 1px solid hsl(0, 100%, 67%);
+}
+.submit-header{
+    display: flex;
+    gap:8px;
+    align-items:center;
+}
+.submit-header .hr{
+    flex: 1;
+    height: 1px;
+    background: hsl(0, 0%, 86%);
+}
+.arrow-btn{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: hsl(259, 100%, 65%);
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+.arrow-btn:hover{
+    background:  hsl(0, 0%, 8%);
+}
+.arrow-btn img{
+    width: 30px;
+    height: 30px;
+}
+/* .result-container{
+    width: 65%;
+} */
+.result{
+    font-size: 58px;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: -8px;
+    line-height: 76px;
+}
+
+.result span{
+    color:hsl(259, 100%, 65%) ;
+}
+.hidden{
+    display: none;
+}
+@media screen and (max-width:600px) {
+    body{
+        padding: 8px;
+    }
+    .date-form{
+        width: 100%;
+    }
+    .date-field input{
+        font-size: 16px;
+        gap: 16px;
+    }
+    .hidden{
+        display: block;
+    }
+    .arrow-btn{
+        height: 40px;
+        width: 40px;
+    }
+    .submit-header{
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    .arrow-btn img{
+        width: 20px;
+        height: 20px;
+    }
+    .result{
+        font-size: 40px;
+        line-height: 64px;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <form action="" id="grading-form">
+        <p id="result"></p>
+        <p>Name</p>
+        <input type="text" required minlength="3" id="student_name" name="student_name">
+        <p>Score</p>
+        <input type="number" name="score" id="student_score">
+        <button type="submit">Grade</button>
+    </form>
+</body>
+<script>
+    const gradeScore = (studentScore)=>{
+        if(studentScore < 40 ) return "F";
+        if(studentScore < 45 ) return "E";
+        if(studentScore < 50 ) return "D";
+        if(studentScore < 60 ) return "C";
+        if(studentScore < 70 ) return "B";
+        return "A";
+    }
+    const gradingForm = document.querySelector("#grading-form")
+    const result = document.querySelector("#result")
+    const handleGrade = (e)=>{
+        e.preventDefault()//
+        const name = gradingForm["student_name"].value
+        const score = gradingForm["score"].value
+        const scoreNumber = parseFloat(score)
+        const grade = gradeScore(scoreNumber)
+
+        result.innerHTML = `${name} has a grade of ${grade}`
+
+    }
+    gradingForm.addEventListener("submit",handleGrade)
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        .modal{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal  .overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .modal form{
+            position: relative;
+            z-index: 10;
+            background-color: #fff;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .open-btn, .close-btn{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="open-btn" id="open-btn">Open Modal</button>
+    <div class="modal" id="modal">
+        <div class="overlay"></div>
+        <div class="main-content">
+            <form action="#">
+                <button type="button" class="close-btn" id="close-btn">x</button>
+                <p>Email</p>
+                <input type="text" name="email" id="">
+                <p>Password</p>
+                <input type="text" name="password" id="">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    const modal = document.querySelector("#modal")
+    const openBtn = document.querySelector("#open-btn")
+    const closeBtn = document.querySelector("#close-btn")
+    const openModal = ()=>{
+        modal.style.display= "flex"
+    }
+    const closeModal = ()=>{
+        modal.style.display= "none"
+    }
+    openBtn.addEventListener('click',openModal)
+    closeBtn.addEventListener('click',closeModal)
+    
+</script>
+</html>

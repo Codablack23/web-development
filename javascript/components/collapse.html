@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapse</title>
+    <style>
+        body,html{
+            background: #F5F5F5;
+        }
+        *,body{
+            margin: 0;
+            padding: 0;
+        }
+        .collapse{
+            max-width: 600px;
+            margin-top: 100px;
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .collapse header{
+            display: flex;
+            padding: 16px;
+            justify-content: space-between;
+            border-bottom: 1px solid #F5F5F5;
+        }
+        .collapse header button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 18px;
+        }
+        .collapse section{
+            max-height: 0;
+            overflow: hidden;
+            transition: all ease 0.7s;
+
+        }
+        .collapse section p{
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="collapse">
+        <header>
+            <p>How do we use your data</p>
+            <button id="collapse-btn">+</button>
+        </header>
+        <section id="collapse-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quod veritatis omnis velit excepturi facilis iure voluptate? Provident nam obcaecati temporibus perspiciatis accusantium optio blanditiis, in quae maiores? Numquam, cumque?</p>
+        </section>
+    </div>
+</body>
+<script>
+    const collapseContent = document.querySelector("#collapse-content")
+    const collapseBtn = document.querySelector("#collapse-btn")
+
+    const toggleCollapse  = ()=>{
+        const maxHeight = collapseContent.style.maxHeight
+        console.log(maxHeight)
+        if(maxHeight == "0" || maxHeight === "" || maxHeight === "0px"){
+            collapseContent.style.maxHeight = "100vh"
+            collapseContent.style.overflow = "auto"
+        }else{
+             collapseContent.style.maxHeight = "0"
+            collapseContent.style.overflow = "hidden"
+        }
+    }
+    collapseBtn.addEventListener("click",toggleCollapse)
+</script>
+</html>

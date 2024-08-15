@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/index.css">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <form class="date-form">
+      <div class="date-field">
+        <label id="day-label">Day</label>
+        <input id="day-input" type="number" placeholder="DD">
+        <p class="error" id="day-error"></p>
+      </div>
+      <div class="date-field">
+        <label id="month-label">Month</label>
+        <input id="month-input" type="number" placeholder="MM">
+        <p class="error" id="month-error"></p>
+      </div>
+      <div class="date-field">
+        <label id="year-label">Year</label>
+        <input id="year-input" type="number" placeholder="YYYY">
+        <p class="error" id="year-error"></p>
+      </div>
+    </form>
+
+    <header class="submit-header">
+      <div class="hr"></div>
+      <button class="arrow-btn" id="submit-btn">
+        <img src="/assets/images/icon-arrow.svg" alt="">
+      </button>
+      <div class="hr hidden"></div>
+    </header>
+    <div class="result-container">
+      <p class="result" id="day-result"> <span>--</span> years</p>
+      <p class="result" id="month-result"> <span>--</span> months</p>
+      <p class="result" id="year-result"> <span>--</span> days</p>
+    </div>
+  </main>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+<script src="/index.js"></script>
+</html>

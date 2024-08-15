@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../lectures/insure-landing-page"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "insure-landing-page"
+	}
+}

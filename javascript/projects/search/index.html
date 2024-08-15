@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container{
+            max-width: 1024px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <div id="searchbar">
+            <input id="search-input" type="text" placeholder="search Name">
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="names-list"></div>
+    </main>
+</body>
+<script>
+    const names = [
+        "Emmanuel",
+        "Mfreke",
+        "Goodluck",
+        "David",
+        "Favour",
+        "Joy",
+        "Bright",
+        "Happinness"
+    ]
+    const convertToNode = (namesList)=>{
+        const result = namesList.map((name)=>{
+            const p = document.createElement("p")
+            p.innerText = name
+            return p
+        })
+        return result
+    }// covert an array of string to a n array of nodes/elemets
+
+    const namesListElement = document.querySelector(".names-list") // get an element with classname "names-list"
+    const searchInput = document.querySelector("#search-input")
+    const searchBtn = document.querySelector("#search-btn")
+
+    const nameNodes = convertToNode(names) // convert the exist names array to node array
+    namesListElement.replaceChildren(...nameNodes) // relaces the content of the html container with  items in the nodes
+
+    const handleSearch = ()=>{
+        const query = searchInput.value
+        const filterResults = (name)=> name.toLowerCase().includes(query.toLowerCase())
+        const searchResults = names.filter(filterResults)
+        const nodes = convertToNode(searchResults)
+        namesListElement.replaceChildren(...nodes)
+    }// handles the btn click for searching
+    searchBtn.addEventListener("click",handleSearch)
+</script>
+</html>

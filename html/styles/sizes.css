@@ -1,0 +1,20 @@
+/* 
+SiZES
+
+width;
+height;
+minWidth;
+minHeight;
+maxWidth;
+maxHeight
+
+pixels(px)
+millimeter(mm)
+centimeter(cm)
+inches(in)
+percentage(%) 60% of 120 != 60% of 200
+viewportHeight(vh)
+viewportWidth(vw)
+rem (rem) => 
+em(em) => 1 x 16px
+*/

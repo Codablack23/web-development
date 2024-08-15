@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome About Page</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+          <a href="/">Home</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact Us</a>
+          <a href="/playlist.html">Playlist</a>
+        </div>
+      </nav>
+    <main class="main-container"> 
+        <header class="contact-header">
+            <h1>Contact Me</h1>
+            <p>Add your details here boy</p>
+        </header>
+        <form class="contact-form" action="/submitted.html" method="get">
+            <label for="">Name</label>
+            <input type="text" required minlength="3"  placeholder="Enter Name">
+            <label for="">Email</label>
+            <input type="email" required placeholder="Enter Email">
+            <label for="">Subject</label>
+            <input type="text" required minlength="6" placeholder="Enter Subject">
+            <label for="">Phone Number</label>
+            <input type="tel" required minlength="9" placeholder="Enter Number">
+            <label for="">Age</label>
+            <input type="number" required min="18" placeholder="Enter Age">
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
